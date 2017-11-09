@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="user">
+	<!-- auto generate default resultMap -->
+	<resultMap id="userMap" type="com.hns.iusp.common.bean.User">
+		<id column="ID" property="id"/>
+		<result column="DLM" property="userName" />
+		<result column="DLMA" property="password" />
+		<result column="JSBS" property="roleCode" />
+		<result column="CJSJ" property="createTime" jdbcType="TIMESTAMP"/>
+	</resultMap>
+	
+	<resultMap id="sessionUserMap" type="com.hns.iusp.common.bean.SessionUser">
+		<id column="ID" property="id"/>
+		<result column="ZGH" property="userName" />
+		<result column="XM" property="realName" />
+		<result column="GWBM" property="positionCode" />
+		<result column="GWMC" property="positionName" />
+		<result column="SFFZR" property="isManager" />
+		<result column="BMBM" property="orgCode" />
+		<result column="BMMC" property="orgName" />
+		<result column="ZZLX" property="orgType" />
+	</resultMap>
+	
+	<resultMap id="teacherMap" type="com.hns.iusp.common.bean.Teacher">
+		<id column="ID" property="id"/>
+		<result column="ZGH" property="userName" />
+		<result column="XM" property="realName" />
+		<result column="BGHM" property="officePhone" />
+		<result column="LXDH" property="telephone" />
+		<result column="DZXX" property="email" />
+	</resultMap>
+	
+	<resultMap id="loginUserMap" type="com.hns.iusp.common.bean.LoginUser">
+		<id column="ID" property="id"/>
+		<result column="DLM" property="userName" />
+		<result column="XM" property="realName" />
+		<result column="BMBM" property="orgCode" />
+	</resultMap>
+	
+	<select id="findUserById" parameterType="com.hns.iusp.common.bean.User" 
+		resultMap="userMap">
+		SELECT 
+			*
+		FROM 
+			IUSP_COMMON_USER 
+		WHERE
+	       ID = #{id}
+	</select>
+
+	<select id="findUserByUserNameAndPwd" parameterType="java.util.Map"
+		resultMap="userMap">
+		SELECT * FROM 
+			IUSP_COMMON_USER 
+		WHERE 
+			DLM = #{userName} 
+			AND DLMA = #{password}
+	</select>
+	
+	<select id="findStudentInfoByUserName" parameterType="java.util.Map" 
+		resultMap="sessionUserMap">
+		SELECT a.ZGH,a.XM,b.GWBM,b.GWMC,b.SFFZR,c.BMBM,c.BMMC,c.ZZLX FROM IUSP_COMMON_STUDENT a,IUSP_COMMON_TEACHER_ORG b, IUSP_COMMON_ORG c
+		WHERE a.ZGH = b.ZGH AND b.ZZBM = c.BMBM AND a.ZGH = #{userName}
+	</select>
+	
+	<select id="findTeacherInfoByUserName" parameterType="java.util.Map" 
+		resultMap="sessionUserMap">
+		SELECT a.ZGH,a.XM,b.GWBM,b.GWMC,b.SFFZR,c.BMBM,c.BMMC,c.ZZLX FROM IUSP_COMMON_TEACHER a,IUSP_COMMON_TEACHER_ORG b, IUSP_COMMON_ORG c
+		WHERE a.ZGH = b.ZGH AND b.ZZBM = c.BMBM AND a.ZGH = #{userName}
+	</select>
+	
+	<select id="findTeacherInfoByOrgCode" parameterType="java.util.Map" 
+		resultMap="teacherMap">
+		SELECT a.* FROM IUSP_COMMON_TEACHER a,IUSP_COMMON_TEACHER_ORG b
+		WHERE a.ZGH = b.ZGH AND b.ZZBM = #{orgCode} ORDER BY GWBM ASC
+	</select>
+	
+	<insert id="addUser" parameterType="com.hns.iusp.common.bean.User">
+		INSERT INTO IUSP_COMMON_USER(
+			<if test = "userName != null and userName !='' ">
+				DLM,
+			</if>
+			<if test = "password != null and password !='' ">
+				DLMA,
+			</if>
+			<if test = "roleCode != null and roleCode !='' ">
+				JSBS,
+			</if>
+			CJSJ
+		) VALUES (
+			<if test = "userName != null and userName !='' ">
+				#{userName, jdbcType=VARCHAR},
+			</if>
+			<if test = "password != null and password !='' ">
+				#{password, jdbcType=VARCHAR},
+			</if>
+			<if test = "roleCode != null and roleCode !='' ">
+				#{roleCode, jdbcType=VARCHAR},
+			</if>
+			SYSDATE
+		)
+	</insert>
+	
+	<insert id="addTeacherInfo" parameterType="java.util.Map">
+		INSERT INTO IUSP_COMMON_TEACHER(
+			<if test = "userName != null and userName !='' ">
+				ZGH,
+			</if>
+			<if test = "realName != null and realName !='' ">
+				XM,
+			</if>
+				LXDH
+		) VALUES (
+			<if test = "userName != null and userName !='' ">
+				#{userName, jdbcType=VARCHAR},
+			</if>
+			<if test = "realName != null and realName !='' ">
+				#{realName, jdbcType=VARCHAR},
+			</if>
+				#{telephone, jdbcType=VARCHAR}
+		)
+	</insert>
+	
+	<update id="changePassword" parameterType="java.util.Map">
+		UPDATE 
+			IUSP_COMMON_USER 
+		SET 
+			DLMA = #{password, jdbcType=VARCHAR}
+		WHERE 
+			DLM = #{userName, jdbcType=VARCHAR}
+	</update>
+	
+	<update id="modifyTeacherInfo" parameterType="com.hns.iusp.common.bean.Teacher">
+		UPDATE 
+			IUSP_COMMON_TEACHER 
+		SET 
+			BGHM = #{officePhone, jdbcType=VARCHAR},
+			LXDH = #{telephone, jdbcType=VARCHAR},
+			DZXX = #{email, jdbcType=VARCHAR}
+		WHERE 
+			ZGH = #{userName, jdbcType=VARCHAR}
+	</update>
+	
+	<select id="findTeacherByUserName" parameterType="java.util.Map" 
+		resultMap="teacherMap">
+		SELECT 
+			*
+		FROM 
+			IUSP_COMMON_TEACHER 
+		WHERE
+	       ZGH = #{userName, jdbcType=VARCHAR}
+	</select>
+	
+	<select id="findTeacherById" parameterType="java.util.Map" 
+		resultMap="teacherMap">
+		SELECT 
+			*
+		FROM 
+			IUSP_COMMON_TEACHER 
+		WHERE
+	       ID = #{id}
+	</select>
+	
+	
+	<select id="findLoginUserByUserName" parameterType="java.util.Map"
+		resultMap="loginUserMap">
+		SELECT * FROM 
+			IUSP_COMMON_LOGIN_USER 
+		WHERE 
+			DLM = #{userName} 
+	</select>
+	
+	<select id="findLoginUserCountByOrgCode"
+		parameterType="java.util.Map" resultType="int">
+		SELECT count(ID) FROM 
+			IUSP_COMMON_LOGIN_USER 
+		WHERE 1=1 
+			<if test = "dept != null and dept !='' ">
+				AND BMBM  IN 
+				 <foreach item="item" index="index" collection="depts" open="(" separator="," close=")">  
+				 #{item}
+				 </foreach>
+			</if>
+	</select>             
+	
+	<insert id="addLoginUser" parameterType="com.hns.iusp.common.bean.LoginUser">
+		INSERT INTO IUSP_COMMON_LOGIN_USER(
+			DLM,
+			XM,
+			BMBM
+		) VALUES (
+			#{userName, jdbcType=VARCHAR},
+			#{realName, jdbcType=VARCHAR},
+			#{orgCode, jdbcType=VARCHAR}
+		)
+	</insert>
+	
+	<delete id="deleteLoginUserByUserName" parameterType="java.util.Map">
+	    DELETE FROM IUSP_COMMON_LOGIN_USER where DLM = #{userName}
+	</delete>
+</mapper>

@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/project/!svn/ver/389/project/nhjc/source/iusp-web/src/java/com/hns/iusp/common/bean
+END
+SessionUser.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/project/!svn/ver/348/project/nhjc/source/iusp-web/src/java/com/hns/iusp/common/bean/SessionUser.java
+END
+Article.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/project/!svn/ver/287/project/nhjc/source/iusp-web/src/java/com/hns/iusp/common/bean/Article.java
+END
+TeacherOrg.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/project/!svn/ver/112/project/nhjc/source/iusp-web/src/java/com/hns/iusp/common/bean/TeacherOrg.java
+END
+Organization.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/project/!svn/ver/348/project/nhjc/source/iusp-web/src/java/com/hns/iusp/common/bean/Organization.java
+END
+OrganizationTree.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/project/!svn/ver/389/project/nhjc/source/iusp-web/src/java/com/hns/iusp/common/bean/OrganizationTree.java
+END
+TreeFont.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/project/!svn/ver/389/project/nhjc/source/iusp-web/src/java/com/hns/iusp/common/bean/TreeFont.java
+END
+LoginUser.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/project/!svn/ver/389/project/nhjc/source/iusp-web/src/java/com/hns/iusp/common/bean/LoginUser.java
+END
+TeacherPositionOrg.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/project/!svn/ver/348/project/nhjc/source/iusp-web/src/java/com/hns/iusp/common/bean/TeacherPositionOrg.java
+END
+Software.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/project/!svn/ver/221/project/nhjc/source/iusp-web/src/java/com/hns/iusp/common/bean/Software.java
+END
+Teacher.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/project/!svn/ver/348/project/nhjc/source/iusp-web/src/java/com/hns/iusp/common/bean/Teacher.java
+END
+User.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/project/!svn/ver/112/project/nhjc/source/iusp-web/src/java/com/hns/iusp/common/bean/User.java
+END

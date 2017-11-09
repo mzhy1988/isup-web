@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/project/!svn/ver/393/project/nhjc/source/iusp-web/src/resources/conf/sqlMap/common
+END
+sqlMap_article.xml
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/project/!svn/ver/284/project/nhjc/source/iusp-web/src/resources/conf/sqlMap/common/sqlMap_article.xml
+END
+sqlMap_org.xml
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/project/!svn/ver/391/project/nhjc/source/iusp-web/src/resources/conf/sqlMap/common/sqlMap_org.xml
+END
+sqlMap_software.xml
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/project/!svn/ver/354/project/nhjc/source/iusp-web/src/resources/conf/sqlMap/common/sqlMap_software.xml
+END
+sqlMap_user.xml
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/project/!svn/ver/393/project/nhjc/source/iusp-web/src/resources/conf/sqlMap/common/sqlMap_user.xml
+END
+sqlMap_schoolterm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/project/!svn/ver/338/project/nhjc/source/iusp-web/src/resources/conf/sqlMap/common/sqlMap_schoolterm.xml
+END

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/scm/!svn/ver/13946/mall/elink_scm/web/webroot/WEB-INF/services
+END
+.cvsignore
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/scm/!svn/ver/13946/mall/elink_scm/web/webroot/WEB-INF/services/.cvsignore
+END
+scm-ws.jar
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/scm/!svn/ver/13946/mall/elink_scm/web/webroot/WEB-INF/services/scm-ws.jar
+END
+version.aar
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/scm/!svn/ver/13946/mall/elink_scm/web/webroot/WEB-INF/services/version.aar
+END
+services.list
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/scm/!svn/ver/13946/mall/elink_scm/web/webroot/WEB-INF/services/services.list
+END

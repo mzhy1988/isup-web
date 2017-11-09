@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/project/!svn/ver/393/project/nhjc/source/iusp-web/src/java/com/hns/iusp/common/dao
+END
+UserDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/project/!svn/ver/393/project/nhjc/source/iusp-web/src/java/com/hns/iusp/common/dao/UserDao.java
+END
+ArticleDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/project/!svn/ver/112/project/nhjc/source/iusp-web/src/java/com/hns/iusp/common/dao/ArticleDao.java
+END
+OrganizationDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/project/!svn/ver/389/project/nhjc/source/iusp-web/src/java/com/hns/iusp/common/dao/OrganizationDao.java
+END
+SoftwareDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/project/!svn/ver/222/project/nhjc/source/iusp-web/src/java/com/hns/iusp/common/dao/SoftwareDao.java
+END

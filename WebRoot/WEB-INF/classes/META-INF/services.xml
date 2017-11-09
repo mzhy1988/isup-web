@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<service name="SCMService">
+	<description> Web Service例子 </description> 
+	<parameter name="ServiceClass" locked="false">com.hns.iusp.ws.WSMsgServiceDelegate</parameter>
+	<operation name="PUT_Receive">
+		<messageReceiver class="org.apache.axis2.rpc.receivers.RPCMessageReceiver"/>
+	</operation>
+</service>

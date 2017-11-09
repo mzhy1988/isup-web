@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/project/!svn/ver/450/project/nhjc/source/iusp-web/WebRoot/WEB-INF/freemarker/home
+END
+articleList.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/project/!svn/ver/450/project/nhjc/source/iusp-web/WebRoot/WEB-INF/freemarker/home/articleList.ftl
+END
+article.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/project/!svn/ver/449/project/nhjc/source/iusp-web/WebRoot/WEB-INF/freemarker/home/article.ftl
+END
+articleQueryList.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/project/!svn/ver/154/project/nhjc/source/iusp-web/WebRoot/WEB-INF/freemarker/home/articleQueryList.ftl
+END

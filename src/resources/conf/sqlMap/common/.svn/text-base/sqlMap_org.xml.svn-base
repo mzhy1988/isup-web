@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="org">
+	<resultMap id="orgMap" type="com.hns.iusp.common.bean.Organization">
+		<id column="ID" property="id"/>
+		<result column="BMBM" property="orgCode" />
+		<result column="BMMC" property="orgName" />
+		<result column="BMMS" property="orgDesc" />
+		<result column="FJBMBM" property="parentCode" />
+		<result column="ZZLX" property="orgType" />
+	</resultMap>
+	
+	<select id="queryPresidentOrgCodeByUserName" parameterType="java.util.Map" 
+		resultType="java.util.List">
+		SELECT 
+			BMBM
+		FROM 
+			IUSP_COMMON_PRESIDENT_ORG 
+		WHERE
+	       ZGH = #{userName}
+	</select>
+	
+	<select id="queryPresidentOrgByUserName" parameterType="java.util.Map" 
+		resultMap="orgMap">
+		SELECT 
+			*
+		FROM 
+			IUSP_COMMON_PRESIDENT_ORG 
+		WHERE
+	       ZGH = #{userName}
+	</select>
+	
+	<select id="queryOrgListByOrgType" parameterType="java.util.Map" 
+		resultMap="orgMap">
+		SELECT 
+			*
+		FROM 
+			IUSP_COMMON_ORG 
+		WHERE
+	       ZZLX = #{orgType} 
+	       AND BMBM NOT IN ('99','98','97')
+	</select>
+	
+	<select id="queryOrgListByParentCode" parameterType="java.util.Map" 
+		resultMap="orgMap">
+		SELECT 
+			*
+		FROM 
+			IUSP_COMMON_ORG 
+		WHERE
+			FJBMBM = #{parentCode}
+	</select>
+	
+	<select id="queryOrgInfoByStaffNo" parameterType="java.util.Map" 
+		resultMap="orgMap">
+		SELECT 
+			a.*
+		FROM 
+			IUSP_COMMON_ORG a,IUSP_COMMON_TEACHER_ORG b
+		WHERE
+			a.BMBM = b.ZZBM
+			AND B.ZGH = ${staffNo}
+	</select>
+	
+	
+	<insert id="addTeacherPositionOrg" parameterType="com.hns.iusp.common.bean.TeacherPositionOrg">
+		INSERT INTO IUSP_COMMON_TEACHER_ORG(
+			<if test = "orgCode != null and orgCode !='' ">
+				ZZBM,
+			</if>
+			<if test = "staffNo != null and staffNo !='' ">
+				ZGH,
+			</if>
+			<if test = "positionCode != null and positionCode !='' ">
+				GWBM,
+			</if>
+			<if test = "positionName != null and positionName !='' ">
+				GWMC,
+			</if>
+			<if test = "isManager != null and isManager !='' ">
+				SFFZR
+			</if>
+		) VALUES (
+			<if test = "orgCode != null and orgCode !='' ">
+				#{orgCode, jdbcType=VARCHAR},
+			</if>
+			<if test = "staffNo != null and staffNo !='' ">
+				#{staffNo, jdbcType=VARCHAR},
+			</if>
+			<if test = "positionCode != null and positionCode !='' ">
+				#{positionCode, jdbcType=VARCHAR},
+			</if>
+			<if test = "positionName != null and positionName !='' ">
+				#{positionName, jdbcType=VARCHAR},
+			</if>
+			<if test = "isManager != null and isManager !='' ">
+				#{isManager, jdbcType=VARCHAR}
+			</if>
+		)
+	</insert>
+</mapper>

@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="workingLog">
+	<!-- auto generate default resultMap -->
+	<resultMap id="workingLogMap" type="com.hns.iusp.workinglog.bean.WorkingLog">
+		<id column="ID" property="id"/>
+		<result column="RZZT" property="logStatus" />
+		<result column="RZLX" property="logType" />
+		<result column="CGZNR" property="nowWorkInfo" />
+		<result column="NGZJH" property="nextWorkInfo" />
+		<result column="WTHJY" property="question" />
+		<result column="TXRZGH" property="staffNo" />
+		<result column="TXRXM" property="staffName" />
+		<result column="RZSJ" property="logTime" />
+		
+		<result column="NF" property="year" />
+		<result column="XQ" property="term" />
+		<result column="DJZ" property="week" />
+		
+		<result column="TXSJ" property="fillTime" jdbcType="TIMESTAMP"/>
+		<result column="SPRZGH" property="approver" />
+		<result column="SPRXM" property="approverName" />
+		<result column="SPSJ" property="approveTime" />
+		<!--<result column="SPZT" property="createTime" />-->
+		<result column="PY" property="comment" />
+		<result column="PF" property="score" />
+		<result column="THYY" property="returnReason" />
+	</resultMap>
+	
+	<insert id="addWorkingLog" parameterType="com.hns.iusp.workinglog.bean.WorkingLog">
+		INSERT INTO IUSP_WORKING_LOG(
+			<if test = "logStatus != null and logStatus !='' ">
+				RZZT,
+			</if>
+			<if test = "logType != null and logType !='' ">
+				RZLX,
+			</if>
+			<if test = "nowWorkInfo != null and nowWorkInfo !='' ">
+				CGZNR,
+			</if>
+			<if test = "nextWorkInfo != null and nextWorkInfo !='' ">
+				NGZJH,
+			</if>
+			<if test = "question != null and question !='' ">
+				WTHJY,
+			</if>
+			<if test = "staffNo != null and staffNo !='' ">
+				TXRZGH,
+			</if>
+			<if test = "staffName != null and staffName !='' ">
+				TXRXM,
+			</if>
+			<if test = "logTime != null and logTime !='' ">
+				RZSJ,
+			</if>
+			<if test = "year != null and year !='' ">
+				NF,
+			</if>
+			<if test = "term != null and term !='' ">
+				XQ,
+			</if>
+			<if test = "week != null and week !='' ">
+				DJZ,
+			</if>
+			TXSJ
+		) VALUES (
+			<if test = "logStatus != null and logStatus !='' ">
+				#{logStatus, jdbcType=VARCHAR},
+			</if>
+			<if test = "logType != null and logType !='' ">
+				#{logType, jdbcType=VARCHAR},
+			</if>
+			<if test = "nowWorkInfo != null and nowWorkInfo !='' ">
+				#{nowWorkInfo, jdbcType=VARCHAR},
+			</if>
+			<if test = "nextWorkInfo != null and nextWorkInfo !='' ">
+				#{nextWorkInfo, jdbcType=VARCHAR},
+			</if>
+			<if test = "question != null and question !='' ">
+				#{question, jdbcType=VARCHAR},
+			</if>
+			<if test = "staffNo != null and staffNo !='' ">
+				#{staffNo, jdbcType=VARCHAR},
+			</if>
+			<if test = "staffName != null and staffName !='' ">
+				#{staffName, jdbcType=VARCHAR},
+			</if>
+			<if test = "logTime != null and logTime !='' ">
+				#{logTime, jdbcType=VARCHAR},
+			</if>
+			<if test = "year != null and year !='' ">
+				#{year, jdbcType=VARCHAR},
+			</if>
+			<if test = "term != null and term !='' ">
+				#{term, jdbcType=VARCHAR},
+			</if>
+			<if test = "week != null and week !='' ">
+				#{week, jdbcType=VARCHAR},
+			</if>
+			SYSDATE)
+	</insert>
+	
+	<update id="updateWorkingLog" parameterType="com.hns.iusp.workinglog.bean.WorkingLog">
+		UPDATE 
+			IUSP_WORKING_LOG 
+		SET 
+			TXSJ = SYSDATE
+			<if test = "logStatus != null and logStatus !='' ">
+				,RZZT = #{logStatus, jdbcType=VARCHAR}
+			</if>
+			<if test = "logType != null and logType !='' ">
+				,RZLX = #{logType, jdbcType=VARCHAR}
+			</if>
+			<if test = "nowWorkInfo != null and nowWorkInfo !='' ">
+				,CGZNR = #{nowWorkInfo, jdbcType=VARCHAR}
+			</if>
+			<if test = "nextWorkInfo != null and nextWorkInfo !='' ">
+				,NGZJH = #{nextWorkInfo, jdbcType=VARCHAR}
+			</if>
+			<if test = "question != null and question !='' ">
+				,WTHJY = #{question, jdbcType=VARCHAR}
+			</if>
+			<if test = "staffNo != null and staffNo !='' ">
+				,TXRZGH = #{staffNo, jdbcType=VARCHAR}
+			</if>
+			<if test = "staffName != null and staffName !='' ">
+				,TXRXM = #{staffName, jdbcType=VARCHAR}
+			</if>
+			
+			<if test = "logTime != null and logTime !='' ">
+				,RZSJ = #{logTime, jdbcType=VARCHAR}
+			</if>
+			
+			<if test = "year != null and year !='' ">
+				,NF = #{year, jdbcType=VARCHAR}
+			</if>
+			
+			<if test = "term != null and term !='' ">
+				,XQ = #{term, jdbcType=VARCHAR}
+			</if>
+			
+			<if test = "week != null and week !='' ">
+				,DJZ = #{week, jdbcType=VARCHAR}
+			</if>
+			
+			<if test = "approver != null and approver !='' ">
+				,SPRZGH = #{approver, jdbcType=VARCHAR}
+			</if>
+			
+			<if test = "approverName != null and approverName !='' ">
+				,SPRXM = #{approverName, jdbcType=VARCHAR}
+			</if>
+			
+			<if test = "approveTime != null and approveTime !='' ">
+				,SPSJ = #{approveTime, jdbcType=VARCHAR}
+			</if>
+			
+			<if test = "comment != null and comment !='' ">
+				,PY = #{comment, jdbcType=VARCHAR}
+			</if>
+			
+			<if test = "score != null and score !='' ">
+				,PF = #{score, jdbcType=VARCHAR}
+			</if>
+			<if test = "returnReason != null and returnReason !='' ">
+				,THYY = #{returnReason, jdbcType=VARCHAR}
+			</if>
+		WHERE ID=#{id}
+	</update>
+	
+	<select id="findWorkingLogById" parameterType="java.util.Map"
+		resultMap="workingLogMap">
+		SELECT * FROM 
+			IUSP_WORKING_LOG 
+		WHERE 
+			ID = #{id} 
+	</select>
+	
+	<select id="findWorkingLogByLogTime" parameterType="java.util.Map"
+		resultMap="workingLogMap">
+		SELECT * FROM 
+			IUSP_WORKING_LOG 
+		WHERE 
+			RZSJ = #{logTime} 
+			AND RZZT != '01' 
+			AND TXRZGH = #{userName} 
+	</select>
+	
+	<select id="findWorkingLogByLogWeekTime" parameterType="java.util.Map"
+		resultMap="workingLogMap">
+		SELECT * FROM 
+			IUSP_WORKING_LOG 
+		WHERE 
+			NF = #{year} 
+			AND XQ = #{term} 
+			AND DJZ = #{week}  
+			AND RZZT != '01' 
+			AND TXRZGH = #{userName} 
+	</select>
+	
+	<select id="findMyWorkingLogCount"
+		parameterType="java.util.Map" resultType="int">
+		SELECT count(ID) FROM 
+			IUSP_WORKING_LOG 
+		WHERE 1=1 
+		<if test="logType!=null and logType!=''"> 
+			AND RZLX = #{logType}
+		</if>
+		<if test="logStatus!=null and logStatus!=''"> 
+			AND RZZT = #{logStatus}
+		</if>
+		<if test="userName!=null and userName!=''"> 
+			AND TXRZGH = #{userName}
+		</if>
+	</select>
+
+	<select id="queryMyWorkingLogForPage"
+		parameterType="java.util.Map" resultMap="workingLogMap">
+			SELECT * FROM 
+			(
+				SELECT temp.*, rownum row_id FROM 
+				( 
+					SELECT * FROM IUSP_WORKING_LOG WHERE 1=1 
+					<if test="logType!=null and logType!=''"> 
+						AND RZLX = #{logType}
+					</if>
+					<if test="logStatus!=null and logStatus!=''"> 
+						AND RZZT = #{logStatus}
+					</if>
+					<if test="userName!=null and userName!=''"> 
+						AND TXRZGH = #{userName}
+					</if>
+		 		) temp 
+		 		WHERE rownum &lt;= #{endIndex}
+			 ) 
+			 WHERE row_id &gt;#{startIndex}
+	</select>
+	<select id="findMyWorkingLogCountBySpr"
+		parameterType="java.util.Map" resultType="int">
+		SELECT count(ID) FROM 
+			IUSP_WORKING_LOG 
+		WHERE 1=1 
+		<if test="logType!=null and logType!=''"> 
+			AND RZLX = #{logType}
+		</if>
+		<if test="logStatus!=null and logStatus!=''"> 
+			AND RZZT = #{logStatus}
+		</if>
+		<if test="userName!=null and userName!=''"> 
+			AND SPRZGH = #{userName}
+		</if>
+	</select>	
+	<select id="findWorkingLogCount"
+		parameterType="java.util.Map" resultType="int">
+		SELECT 
+			count(a.ID) 
+		FROM 
+			IUSP_WORKING_LOG a
+			LEFT JOIN IUSP_COMMON_TEACHER_ORG b
+			ON a.TXRZGH = b.ZGH 
+		WHERE 
+			b.ZZBM IN 
+			 <foreach item="item" index="index" collection="depts" open="(" separator="," close=")">  
+			 #{item}
+			 </foreach>
+		<if test="logType!=null and logType!=''"> 
+			AND a.RZLX = #{logType}
+		</if>
+		<if test="logStatus!=null and logStatus!=''"> 
+			AND a.RZZT = #{logStatus}
+		</if>
+		<if test="staffNo!=null and staffNo!=''"> 
+			AND a.TXRZGH = #{staffNo}
+		</if>
+		<if test="staffName!=null and staffName!=''"> 
+			AND a.TXRXM like '%'||#{staffName}||'%' 
+		</if>
+		<if test="logStatus=='03'"> 
+			AND a.SPRZGH = #{userName}
+		</if>
+		AND a.TXRZGH != #{userName}
+		AND a.TXRZGH NOT IN (
+			SELECT ZGH FROM IUSP_COMMON_TEACHER_ORG 
+			WHERE ZZBM = #{currDept} AND GWBM = '004'
+		)
+	</select>
+
+	<select id="queryWorkingLogForPage"
+		parameterType="java.util.Map" resultMap="workingLogMap">
+			SELECT * FROM 
+			(
+				SELECT temp.*, rownum row_id FROM 
+				( 
+					SELECT 
+						a.* 
+					FROM 
+						IUSP_WORKING_LOG a
+					LEFT JOIN 
+						IUSP_COMMON_TEACHER_ORG b
+						ON a.TXRZGH = b.ZGH 
+					WHERE 
+						b.ZZBM IN 
+						 <foreach item="item" index="index" collection="depts" open="(" separator="," close=")">  
+						  #{item}
+						 </foreach>
+					<if test="logType!=null and logType!=''"> 
+						AND a.RZLX = #{logType}
+					</if>
+					<if test="logStatus!=null and logStatus!=''"> 
+						AND a.RZZT = #{logStatus}
+					</if>
+					<if test="staffNo!=null and staffNo!=''"> 
+						AND a.TXRZGH = #{staffNo}
+					</if>
+					<if test="staffName!=null and staffName!=''"> 
+						AND a.TXRXM like '%'||#{staffName}||'%' 
+					</if>
+					<if test="logStatus=='03'"> 
+						AND a.SPRZGH = #{userName}
+					</if>
+					AND a.TXRZGH != #{userName} 
+					AND a.TXRZGH NOT IN (
+						SELECT ZGH FROM IUSP_COMMON_TEACHER_ORG 
+						WHERE ZZBM = #{currDept} AND GWBM = '004'
+					)
+					ORDER BY a.TXSJ DESC
+		 		) temp 
+		 		WHERE rownum &lt;= #{endIndex}
+			 ) 
+			 WHERE row_id &gt;#{startIndex}
+	</select>
+	
+	<select id="findWorkingLog1Count"
+		parameterType="java.util.Map" resultType="int">
+		SELECT 
+			count(a.ID) 
+		FROM 
+			IUSP_WORKING_LOG a
+		WHERE 
+			1=1 
+		<if test="logType!=null and logType!=''"> 
+			AND a.RZLX = #{logType}
+		</if>
+		<if test="logStatus!=null and logStatus!=''"> 
+			AND a.RZZT = #{logStatus}
+		</if>
+		<if test="staffNo!=null and staffNo!=''"> 
+			AND a.TXRZGH = #{staffNo}
+		</if>
+		<if test="staffName!=null and staffName!=''"> 
+			AND a.TXRXM like '%'||#{staffName}||'%' 
+		</if>
+		<if test="logStatus=='03'"> 
+			AND a.SPRZGH = #{userName}
+		</if>
+	</select>
+
+	<select id="queryWorkingLog1ForPage"
+		parameterType="java.util.Map" resultMap="workingLogMap">
+			SELECT * FROM 
+			(
+				SELECT temp.*, rownum row_id FROM 
+				( 
+					SELECT 
+						a.* 
+					FROM 
+						IUSP_WORKING_LOG a
+					WHERE 
+					1=1
+					<if test="logType!=null and logType!=''"> 
+						AND a.RZLX = #{logType}
+					</if>
+					<if test="logStatus!=null and logStatus!=''"> 
+						AND a.RZZT = #{logStatus}
+					</if>
+					<if test="staffNo!=null and staffNo!=''"> 
+						AND a.TXRZGH = #{staffNo}
+					</if>
+					<if test="staffName!=null and staffName!=''"> 
+						AND a.TXRXM like '%'||#{staffName}||'%' 
+					</if>
+					<if test="logStatus=='03'"> 
+						AND a.SPRZGH = #{userName}
+					</if>
+					ORDER BY a.TXSJ DESC
+		 		) temp 
+		 		WHERE rownum &lt;= #{endIndex}
+			 ) 
+			 WHERE row_id &gt;#{startIndex}
+	</select>
+	<delete id="deleteWorkingLogById" parameterType="com.hns.iusp.workinglog.bean.WorkingLog">
+	    DELETE FROM IUSP_WORKING_LOG where ID = #{id}
+	</delete>
+</mapper>

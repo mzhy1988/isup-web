@@ -1,0 +1,3 @@
+1、axis :  webService 已打包模式发布，必须将service.xml 达到jar下面的meta-inf 下面，ant 打jar包时
+   如果没有META-INF 则自动生成一个META-INF 如果有则用现有的 META-INF，META-INF应在该jar的最高目录
+2、WSDL地址 http://192.168.20.143:8080/iusp-web/services/SCMService?wsdl

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/project/!svn/ver/430/project/nhjc/source/iusp-web/WebRoot/WEB-INF/freemarker/admin/software
+END
+softwareQueryList.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/project/!svn/ver/264/project/nhjc/source/iusp-web/WebRoot/WEB-INF/freemarker/admin/software/softwareQueryList.ftl
+END
+softD.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/project/!svn/ver/430/project/nhjc/source/iusp-web/WebRoot/WEB-INF/freemarker/admin/software/softD.ftl
+END
+insertSoft.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/project/!svn/ver/396/project/nhjc/source/iusp-web/WebRoot/WEB-INF/freemarker/admin/software/insertSoft.ftl
+END
+loadWaiting.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/project/!svn/ver/388/project/nhjc/source/iusp-web/WebRoot/WEB-INF/freemarker/admin/software/loadWaiting.ftl
+END

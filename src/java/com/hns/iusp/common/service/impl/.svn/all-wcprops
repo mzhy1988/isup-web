@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/project/!svn/ver/393/project/nhjc/source/iusp-web/src/java/com/hns/iusp/common/service/impl
+END
+UserServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/project/!svn/ver/393/project/nhjc/source/iusp-web/src/java/com/hns/iusp/common/service/impl/UserServiceImpl.java
+END
+ArticleServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/project/!svn/ver/112/project/nhjc/source/iusp-web/src/java/com/hns/iusp/common/service/impl/ArticleServiceImpl.java
+END
+OrganizationServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/project/!svn/ver/393/project/nhjc/source/iusp-web/src/java/com/hns/iusp/common/service/impl/OrganizationServiceImpl.java
+END
+SoftwareServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/project/!svn/ver/225/project/nhjc/source/iusp-web/src/java/com/hns/iusp/common/service/impl/SoftwareServiceImpl.java
+END

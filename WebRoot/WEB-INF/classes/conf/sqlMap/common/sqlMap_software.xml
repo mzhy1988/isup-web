@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="software">
+	<!-- auto generate default resultMap  jdbcType="CLOB" javaType="java.lang.String" typeHandler="com.hns.iusp.utils.OracleClobTypeHandler" -->
+	<resultMap id="softwareMap" type="com.hns.iusp.common.bean.Software">
+		<id column="ID" property="id" />
+		<result column="XSMC" property="downName" />
+		<result column="MSXX" property="descinfo" />
+		<result column="XZDZ" property="downaddr"/>
+		<result column="SCZ" property="uploader" />
+		<result column="SCSJ" property="createTime" jdbcType="TIMESTAMP" />
+	</resultMap>
+
+	<select id="findSoftwareById"
+		parameterType="java.lang.Integer" resultMap="softwareMap">
+		SELECT * FROM IUSP_COMMON_DOWNLOAD_SOFTWARE WHERE ID = #{id}
+	</select>
+	
+	<select id="findSoftwareCount"
+		parameterType="java.util.Map" resultType="int">
+		SELECT count(ID) FROM 
+			IUSP_COMMON_DOWNLOAD_SOFTWARE 
+		WHERE 1=1 
+		<if test="downName!=null and downName!=''"> 
+			AND XSMC like '%'||#{downName}||'%'
+		</if>
+		<if test="uploader!=null and uploader!=''"> 
+			AND SCZ = #{uploader}
+		</if>
+	</select>
+
+	<select id="querySoftwareForPage"
+		parameterType="java.util.Map" resultMap="softwareMap">
+			SELECT * FROM 
+			(
+				SELECT temp.*, rownum row_id FROM 
+				( 
+					SELECT * FROM IUSP_COMMON_DOWNLOAD_SOFTWARE WHERE 1=1 
+					<if test="downName!=null and downNname!=''"> 
+						AND XSMC like '%'||#{downName}||'%'
+					</if>
+					<if test="uploader!=null and uploader!=''"> 
+						AND SCZ = #{uploader}
+					</if>
+		 		) temp 
+		 		WHERE rownum &lt;= #{endIndex}
+			 ) 
+			 WHERE row_id &gt;#{startIndex}
+	</select>
+	
+	<select id="querySoftwareByLimit"
+		parameterType="java.util.Map" resultMap="softwareMap">
+			SELECT * FROM 
+			(
+				SELECT temp.*, rownum row_id FROM 
+				( 
+					SELECT * FROM IUSP_COMMON_DOWNLOAD_SOFTWARE ORDER BY ID DESC
+		 		) temp 
+		 		WHERE rownum &lt;= #{endIndex}
+			 ) 
+			 WHERE row_id &gt;0
+	</select>
+	
+	<!-- #{content,jdbcType=CLOB} -->
+	<insert id="addSoftware" parameterType="com.hns.iusp.common.bean.Software">
+		insert into IUSP_COMMON_DOWNLOAD_SOFTWARE(XSMC,MSXX,XZDZ,SCZ,SCSJ) values(#{downName},#{descinfo},#{downaddr},#{uploader},SYSDATE)
+	</insert>
+	
+	<insert id="updateSoftware" parameterType="com.hns.iusp.common.bean.Software">
+		update IUSP_COMMON_DOWNLOAD_SOFTWARE set XSMC=#{title},ZY=#{downName} where ID = #{id}
+	</insert>
+
+	<delete id="deleteSoftwareById" parameterType="com.hns.iusp.common.bean.Software">
+	    DELETE FROM IUSP_COMMON_DOWNLOAD_SOFTWARE where ID = #{id}
+	</delete>
+	
+</mapper>

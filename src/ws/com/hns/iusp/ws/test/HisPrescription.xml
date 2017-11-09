@@ -1,0 +1,66 @@
+<xml>		
+<items> 		
+<item>		
+<Head>		
+	<OrgName>南京市栖霞区仙林卫生服务中心</OrgName>	
+	<PresID>1000010</PresID>	
+	<PresNo>10000010010</PresNo>	
+	<PresDate>2016-04-14 12:12:12</PresDate>	
+	<PresType>1</PresType>	
+	<Amt>100.00</Amt>	
+	<Diagnosis>感冒发烧</Diagnosis>	
+	<BagCount>5</BagCount>	
+	<MedUsage>PO</MedUsage>	
+	<MedPerDos>每次1袋</MedPerDos>	
+	<MedPerDay>BIW</MedPerDay>	
+	<DoctorName>陈浩南</DoctorName>	
+	<DoctorNo>1001</DoctorNo>	
+	<DoctorSex>男</DoctorSex>	
+	<DoctorIDCard>320829198805230918</DoctorIDCard>	
+	<DoctorBirthday>1988-08-09</DoctorBirthday>	
+	<DoctorEducation>博士</DoctorEducation>	
+	<DoctorCertificateNo>100200300</DoctorCertificateNo>	
+	<DoctorCertificateOrg>国家卫生部</DoctorCertificateOrg>	
+	<DoctorCertificateDate>1990-08-09</DoctorCertificateDate>	
+	<DoctorLevel>主任医师</DoctorLevel>	
+	<DoctorType>外科</DoctorType>	
+	<DoctorRange>心胸外科，神经外科</DoctorRange>	
+	<DoctorSynopsis>这个医师好，非常好！</DoctorSynopsis>	
+	<PatientCardNo>100200300</PatientCardNo>	
+	<PatientIDCard>320829198805230987</PatientIDCard>	
+	<PatientName>张三</PatientName>	
+	<PatientAge>35</PatientAge>	
+	<PatientSex>男</PatientSex>	
+	<PhoneNumber>15295538717</PhoneNumber>	
+	<LineCount>1</LineCount>	
+	<Remark>备注备注</Remark>	
+	<SiteCode>NJ_XLYY</SiteCode>	
+	<OrgCode>NJSQXQXLSQWSFWZX</OrgCode>	
+</Head>		
+<Detail>		
+	<Line>	
+		<PresLineID>1</PresLineID>
+		<PresNo>10000010010</PresNo>
+		<ProductID>1000053</ProductID>
+		<MedicineName>穿心莲</MedicineName>
+		<ProductName>穿心莲</ProductName>
+		<ProductStyle>穿心莲</ProductStyle>
+		<UOM>克</UOM>
+		<ProductSpec>中药</ProductSpec>
+		<ProductArea>南京</ProductArea>
+		<Manufacturer>南京制药厂</Manufacturer>
+		<Qty>50.00</Qty>
+		<DoctorGuide>煎制</DoctorGuide>
+		<Price>10.00</Price>
+		<Amount>500.00</Amount>
+		<MedUsage>饭前服用</MedUsage>	
+	    <MedPerDos>每次1袋</MedPerDos>	
+	    <MedPerDay>每天3次</MedPerDay>	
+	    <BuyUom>克</BuyUom>	
+	    <BuyPrice>10.00</BuyPrice>	
+	    <BuyQty>50.00</BuyQty>	
+	</Line>	
+</Detail>		
+</item> 		
+</items>		
+</xml>		

@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/project/!svn/ver/459/project/nhjc/source/iusp-web/WebRoot/WEB-INF/freemarker/include
+END
+footer.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/project/!svn/ver/415/project/nhjc/source/iusp-web/WebRoot/WEB-INF/freemarker/include/footer.ftl
+END
+indexheader.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/project/!svn/ver/451/project/nhjc/source/iusp-web/WebRoot/WEB-INF/freemarker/include/indexheader.ftl
+END
+smallheader.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/project/!svn/ver/452/project/nhjc/source/iusp-web/WebRoot/WEB-INF/freemarker/include/smallheader.ftl
+END
+loginInfo.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/project/!svn/ver/459/project/nhjc/source/iusp-web/WebRoot/WEB-INF/freemarker/include/loginInfo.ftl
+END
+ucenterFooter.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/project/!svn/ver/410/project/nhjc/source/iusp-web/WebRoot/WEB-INF/freemarker/include/ucenterFooter.ftl
+END
+header.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/project/!svn/ver/457/project/nhjc/source/iusp-web/WebRoot/WEB-INF/freemarker/include/header.ftl
+END

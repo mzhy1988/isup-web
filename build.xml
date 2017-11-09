@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="elink11" default="build" basedir=".">
+    <!--Load The Build Properties File-->
+    <property file="build.properties"/>
+    <property name="project.version" value="1.0"/>
+    <property file="basedir" value="."/>
+	<property name="build.dir" value="${basedir}/build"/>
+	<property name="src.web.dir" value="web/webroot"/>
+    <property name="src.dir" value="${basedir}/src"/>
+    <!--Web Service-->
+    <property name="axis.lib.dir" value="${basedir}/lib/axis"/>
+    <property name="ws.src.dir" value="${basedir}/src/ws"/>
+	<property name="build.ws.src.dir" value="${basedir}/build/ws/src"/>
+    <property name="build.ws.classes.dir" value="${basedir}/build/ws/classes"/>
+	<property name="build.ws.dir" value="${basedir}/build/ws"/>
+    <!--Define The Classpath-->
+    <path id="classpath">
+        <fileset dir="${axis.lib.dir}">
+            <include name="**/*.jar"/>
+            <include name="**/*.zip"/>
+            <exclude name="**/*server*"/>
+        </fileset>
+    </path>
+
+    <target name="clean" depends="clean_client"/>
+    <target name="clean_client">
+        <delete dir="${build.ws.dir}"/>
+    </target>
+    <target name="prepare_ws" depends="clean">
+        <mkdir dir="${build.ws.dir}"/>
+        <mkdir dir="${build.ws.src.dir}"/>
+        <mkdir dir="${build.ws.classes.dir}"/>
+        <!--Copy The Source Files-->
+        <copy todir="${build.ws.src.dir}" overwrite="true">
+            <!--TODO -->
+            <fileset dir="${ws.src.dir}" includes="**/*.*" excludes="**/test/**"/>
+        </copy>
+    </target>
+    <!-- =========================================== -->
+    <!-- Creates the war archives                    -->
+    <!-- =========================================== -->
+    <target name="compile_ws" depends="prepare_ws">
+        <!--1. Compile Java Source Files-->
+        <javac srcdir="${build.ws.src.dir}" destdir="${build.ws.classes.dir}" fork="true" memoryMaximumSize="128M" source="1.5" target="1.5" debug="true" encoding="GBK">
+            <classpath refid="classpath"/>
+        </javac>
+        <!--2. Convert Properties Files-->
+        <native2ascii encoding="GB2312" src="${build.ws.src.dir}" dest="${build.ws.classes.dir}" includes="**/*_zh_CN.properties"/>
+        <!--2. Copy Other Required Files-->
+        <copy todir="${build.ws.classes.dir}">
+            <fileset dir="${build.ws.src.dir}" includes="**/*.properties **/*.png **/*.gif **/*.jpg **/*.xml **/*.html **/*.htm **/*.dtd **/*.css **/*.library **/*.jwc **/*.page"/>
+        </copy>
+    </target>
+	<target name="build_ws_jar" depends="compile_ws">
+        <jar jarfile="${build.ws.dir}/scm-ws.jar">
+            <fileset dir="${build.ws.classes.dir}">
+                <include name="**/*"/>
+            </fileset>
+        </jar>
+        <jar jarfile="${build.ws.dir}/ws.aar">
+            <fileset dir="${build.ws.classes.dir}">
+                <include name="**/*"/>
+            </fileset>
+        </jar>
+    </target>
+	<target name="build_war" depends="build_ws_jar">
+        <mkdir dir="${build.dir}/web"/>
+		<mkdir dir="${src.web.dir}"/>
+        <mkdir dir="${build.dir}/report"/>
+        <copy todir="${build.dir}/web" overwrite="true">
+            <fileset dir="${src.web.dir}">
+                <include name="**/*.*"/>
+                <exclude name="WEB-INF/classes/**"/>
+                <exclude name="WEB-INF/license/**"/>
+                <exclude name="client/**"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="build" depends="clean,build_war"/>
+</project>

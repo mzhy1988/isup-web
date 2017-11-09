@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/project/!svn/ver/390/project/nhjc/source/iusp-web/WebRoot/WEB-INF/freemarker/common
+END
+page.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/project/!svn/ver/154/project/nhjc/source/iusp-web/WebRoot/WEB-INF/freemarker/common/page.ftl
+END
+iusp_macro.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/project/!svn/ver/390/project/nhjc/source/iusp-web/WebRoot/WEB-INF/freemarker/common/iusp_macro.ftl
+END

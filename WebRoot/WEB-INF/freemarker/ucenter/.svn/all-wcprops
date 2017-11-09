@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/project/!svn/ver/465/project/nhjc/source/iusp-web/WebRoot/WEB-INF/freemarker/ucenter
+END
+changePwd.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/project/!svn/ver/358/project/nhjc/source/iusp-web/WebRoot/WEB-INF/freemarker/ucenter/changePwd.ftl
+END
+ucenter.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/project/!svn/ver/465/project/nhjc/source/iusp-web/WebRoot/WEB-INF/freemarker/ucenter/ucenter.ftl
+END
+modifyBasicInfo.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/project/!svn/ver/358/project/nhjc/source/iusp-web/WebRoot/WEB-INF/freemarker/ucenter/modifyBasicInfo.ftl
+END
+orgTree.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/project/!svn/ver/390/project/nhjc/source/iusp-web/WebRoot/WEB-INF/freemarker/ucenter/orgTree.ftl
+END

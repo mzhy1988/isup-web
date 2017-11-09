@@ -1,0 +1,101 @@
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/project/!svn/ver/442/project/nhjc/source/iusp-web/WebRoot/WEB-INF/freemarker/admin/article
+END
+guide.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/project/!svn/ver/427/project/nhjc/source/iusp-web/WebRoot/WEB-INF/freemarker/admin/article/guide.ftl
+END
+footer.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/project/!svn/ver/347/project/nhjc/source/iusp-web/WebRoot/WEB-INF/freemarker/admin/article/footer.ftl
+END
+insertSoft.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/project/!svn/ver/178/project/nhjc/source/iusp-web/WebRoot/WEB-INF/freemarker/admin/article/insertSoft.ftl
+END
+articleQueryList.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/project/!svn/ver/397/project/nhjc/source/iusp-web/WebRoot/WEB-INF/freemarker/admin/article/articleQueryList.ftl
+END
+insertNotice.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/project/!svn/ver/177/project/nhjc/source/iusp-web/WebRoot/WEB-INF/freemarker/admin/article/insertNotice.ftl
+END
+articleLst.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/project/!svn/ver/426/project/nhjc/source/iusp-web/WebRoot/WEB-INF/freemarker/admin/article/articleLst.ftl
+END
+insertArticle.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/project/!svn/ver/376/project/nhjc/source/iusp-web/WebRoot/WEB-INF/freemarker/admin/article/insertArticle.ftl
+END
+mdfArticle.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/project/!svn/ver/294/project/nhjc/source/iusp-web/WebRoot/WEB-INF/freemarker/admin/article/mdfArticle.ftl
+END
+softD.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/project/!svn/ver/429/project/nhjc/source/iusp-web/WebRoot/WEB-INF/freemarker/admin/article/softD.ftl
+END
+insertHot.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/project/!svn/ver/176/project/nhjc/source/iusp-web/WebRoot/WEB-INF/freemarker/admin/article/insertHot.ftl
+END
+articleList.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/project/!svn/ver/112/project/nhjc/source/iusp-web/WebRoot/WEB-INF/freemarker/admin/article/articleList.ftl
+END
+notice.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/project/!svn/ver/159/project/nhjc/source/iusp-web/WebRoot/WEB-INF/freemarker/admin/article/notice.ftl
+END
+insertGuide.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/project/!svn/ver/175/project/nhjc/source/iusp-web/WebRoot/WEB-INF/freemarker/admin/article/insertGuide.ftl
+END
+article.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/project/!svn/ver/366/project/nhjc/source/iusp-web/WebRoot/WEB-INF/freemarker/admin/article/article.ftl
+END
+header.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/project/!svn/ver/442/project/nhjc/source/iusp-web/WebRoot/WEB-INF/freemarker/admin/article/header.ftl
+END
+hot.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/project/!svn/ver/419/project/nhjc/source/iusp-web/WebRoot/WEB-INF/freemarker/admin/article/hot.ftl
+END
